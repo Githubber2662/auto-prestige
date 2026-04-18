@@ -118,5 +118,5 @@ function interval(){
 
 load();
 setInterval(save,1000);
-setInterval(targetPrestige,20);
-setInterval(interval,20);
+setInterval(targetPrestige,1);
+setInterval(interval,1);
