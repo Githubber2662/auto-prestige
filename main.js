@@ -15,14 +15,6 @@ var pps; // points per second
 var targetLayer; // the layer that will be prestiged
 var diff;
 
-function notate(x, rounding){
-  if(O(x).lt("e9")){
-    return (Math.round(O(x).toNumber()*rounding)/rounding).toLocaleString();
-  } else {
-    return O(x).div(O(10).pow(O(x).log10().floor())).toNumber().toFixed(3) + "e" + O(x).log10().floor().toNumber();
-  }
-} // Converts numbers to make them readable.
-
 function calcPending(layer){
   if(layer == 0){
     return O(game.pts).div(10).sqrt().floor();
@@ -104,7 +96,7 @@ function prestige(layer){
 } // Prestiges a layer for the appropriate amount of points.
 
 function updateHTML(){
-  document.getElementById("pts").textContent = notate(game.pts, 1);
+  document.getElementById("pts").textContent = game.pts;
 } // Updates some changing HTML each tick.
 
 function targetPrestige(){
