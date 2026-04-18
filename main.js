@@ -19,7 +19,7 @@ function notate(x, rounding){
   if(O(x).lt("e9")){
     return (Math.round(O(x).toNumber()*rounding)/rounding).toLocaleString();
   } else {
-    return O(x).div(O(10).pow(O(x).log10().floor())).toNumber().toFixed(3) + "e" + O(x).log10().floor().toNumber().toLocaleString();
+    return O(x).div(O(10).pow(O(x).log10().floor())).toNumber().toFixed(3) + "e" + O(x).log10().floor().toNumber();
   }
 } // Converts numbers to make them readable.
 
@@ -118,5 +118,5 @@ function interval(){
 
 load();
 setInterval(save,1000);
-setInterval(targetPrestige,1000);
-setInterval(interval,30);
+setInterval(targetPrestige,20);
+setInterval(interval,20);
