@@ -1,7 +1,7 @@
 // Made by Katakana! / K. Ansi
 
 let O = x => {
-  return new OmegaNum(x); // Ignore
+  return new ExpantaNum(x); // Ignore
 };
 
 function Game() {
@@ -10,7 +10,7 @@ function Game() {
 }
 
 var game = new Game();
-var date = Date.now();
+var date = performance.now();
 var pps; // points per second
 var targetLayer; // the layer that will be prestiged
 var diff;
@@ -55,7 +55,7 @@ function updateVars(){
   var highestMult;
   var str;
   
-  diff = (Date.now() - date)/1000; // Calculates difference between two ticks to generate income.
+  diff = (performance.now() - date)/1000; // Calculates difference between two ticks to generate income.
   targetLayer = 0;
   
   pps = 1;
@@ -85,7 +85,7 @@ function updateVars(){
   document.getElementById("layers").innerHTML = str;
   document.getElementsByTagName("p")[targetLayer].style.color = "#00B000";
   
-  date = Date.now();
+  date = performance.now();
 } // Updates points and layer information each tick.
 
 function prestige(layer){
